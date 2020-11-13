@@ -1,0 +1,6 @@
+node_modules/
+dist/
+report.*
+yarn-error.log
+.env
+tests/coverage/

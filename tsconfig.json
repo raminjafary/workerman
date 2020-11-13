@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2017",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "sourceMap": true,
+    "lib": ["dom", "es5", "scripthost", "es2015.iterable", "es6"],
+    "noEmitHelpers": false,
+    "typeRoots": ["./node_modules/@types", "./types"]
+  },
+  "exclude": ["node_modules", "dist"]
+}
