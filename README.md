@@ -1,5 +1,5 @@
 # Workerman
-> Run aync/sync functions in a dedicated inline worker
+> Parallelize your actions with dedicated inline workers
 
 ## License
 
