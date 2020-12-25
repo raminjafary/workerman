@@ -1,13 +1,12 @@
 import { Workerman } from '../../src/workerman'
 
-
 const userPosts = new Workerman(async function userPosts() {
   const res = await fetch(
     'https://jsonplaceholder.typicode.com/posts?userId=1',
     {
       headers: {
-        'Access-Control-Allow-Origin': '*'
-      }
+        'Access-Control-Allow-Origin': '*',
+      },
     }
   )
   const data = res.json()
@@ -21,12 +20,12 @@ const userPosts = new Workerman(async function userPosts() {
 const postTwo = new Workerman((id: number) => {
   return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
     headers: {
-      'Access-Control-Allow-Origin': '*'
-    }
+      'Access-Control-Allow-Origin': '*',
+    },
   })
     .then((res: any) => res.json())
     .then((json: any) => json)
 })
-postTwo.proxy(2).then(data => {
+postTwo.proxy(2).then((data) => {
   console.log('---DATA COMES FROM PROMISE---\n', data)
 }, console.error)
