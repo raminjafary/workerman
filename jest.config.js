@@ -1,9 +1,5 @@
 module.exports = {
   testEnvironment: 'jest-environment-jsdom',
-  moduleNameMapper: {
-    '\\.s?css$':
-      'identity-obj-proxy' || require.resolve('./tests/mocks/style-mock.ts')
-  },
   testPathIgnorePatterns: [
     '<rootDir>/(dist|node_modules|types|tests/mocks|tests/coverage)/'
   ],
@@ -11,7 +7,7 @@ module.exports = {
     '^.+\\.ts?$': 'ts-jest'
   },
   coverageDirectory: 'tests/coverage',
-  collectCoverageFrom: ['src/**/*.{ts,js}', 'examples/**/*.{ts,js}'],
+  collectCoverageFrom: ['src/**/*.{ts,js}'],
   coverageThreshold: {
     global: {
       statements: 15,

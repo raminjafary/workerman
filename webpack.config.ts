@@ -5,22 +5,14 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const NODE_ENV: string = process.env.NODE_ENV
 
-const getAbsolutePath = function (folderName: string): string {
-  return path.join(__dirname, folderName)
-}
-
 const config: webpack.Configuration = {
-  entry: {
-    workerman: './tests/fixtures/index.ts',
-  },
   output: {
     filename: '[name].min.js',
-    path: getAbsolutePath('dist'),
+    path: path.join(__dirname, 'dist'),
   },
   resolve: {
     extensions: ['.ts', '.js'],
   },
-  mode: 'production',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
@@ -29,13 +21,14 @@ const config: webpack.Configuration = {
       },
     }),
     new CompressionPlugin({
-      algorithm: 'gzip',
+      algorithm: 'brotliCompress',
     }) as any,
-    new HtmlWebpackPlugin({
-      title: 'workerman',
-      filename: 'index.html',
-    }),
-  ],
+    NODE_ENV === 'development' &&
+      new HtmlWebpackPlugin({
+        title: 'workerman',
+        filename: 'index.html',
+      }),
+  ].filter(Boolean),
   module: {
     rules: [
       {
