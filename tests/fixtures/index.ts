@@ -1,4 +1,4 @@
-import { Workerman } from '../../src/workerman'
+import { Workerman } from '../../src'
 
 const userPosts = new Workerman(async function userPosts() {
   const res = await fetch(
