@@ -1,6 +1,6 @@
 {
   "name": "@raminjafary/workerman",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "description": "Run your JavaScript off the browser's main thread with inline workers",
   "main": "dist/main.min.js",
   "typings": "dist/index.d.ts",
@@ -56,7 +56,7 @@
     "webpack-dev-server": "3.11.2"
   },
   "publishConfig": {
-    "access": "public"
+  "access": "public"
   },
   "keywords": [
     "inline-worker",
