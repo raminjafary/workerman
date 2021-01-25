@@ -9,6 +9,7 @@ const config: webpack.Configuration = {
   output: {
     filename: '[name].min.js',
     path: path.join(__dirname, 'dist'),
+    library: 'workerman',
   },
   resolve: {
     extensions: ['.ts', '.js'],

@@ -2,7 +2,7 @@
   "name": "@raminjafary/workerman",
   "version": "0.1.0",
   "description": "Run your JavaScript off the browser's main thread with inline workers",
-  "main": "dist/index.js",
+  "main": "dist/main.min.js",
   "typings": "dist/index.d.ts",
   "author": "raminjafary <raminjafary1993@gmail.com>",
   "repository": {
@@ -15,7 +15,8 @@
   ],
   "scripts": {
     "dev": "NODE_ENV=development webpack serve --mode development --entry ./tests/fixtures/index.ts",
-    "build": "NODE_ENV=production webpack --mode production --entry ./src/index.ts",
+    "build": "yarn clean && NODE_ENV=production webpack --mode production --entry ./src/index.ts",
+    "clean": "rm -rf dist",
     "test": "jest --verbose --coverage",
     "lint": "eslint --ext .ts --ignore-path .gitignore .",
     "lint:fix": "yarn lint --fix",
