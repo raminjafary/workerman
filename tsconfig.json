@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "dist",
     "noImplicitAny": true,
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
-    "target": "es2017",
+    "target": "esnext",
     "allowJs": true,
     "esModuleInterop": true,
     "declaration": true,
-    "sourceMap": true,
-    "lib": ["dom", "es5", "scripthost", "es2015.iterable", "es6"],
     "noEmitHelpers": false,
-    "typeRoots": ["./node_modules/@types", "./types"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
