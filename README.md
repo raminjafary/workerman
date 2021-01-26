@@ -15,6 +15,8 @@ yarn add @raminjafary/workerman
 ### Async/Await
 
 ```js
+import Workerman from "@raminjafary/workerman";
+
 const post = new Workerman(async function getUserPosts() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
   return res.json()
@@ -28,6 +30,8 @@ const post = new Workerman(async function getUserPosts() {
 ### Promise
 
 ```js
+import Workerman from "@raminjafary/workerman";
+
 const post = new Workerman(id => {
   return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
     .then(res => res.json())
@@ -38,10 +42,6 @@ post.proxy(2).then((data) => {
 }, console.error)
 
 ```
-## Development
-- Clone this repository.
-- Install dependencies using `yarn install` or `npm install`.
-- Start development server using `npm run dev` or `yarn dev`.
 
 ## License
 
