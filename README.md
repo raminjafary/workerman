@@ -1,4 +1,5 @@
 # Workerman
+[![npm (scoped with tag)](https://img.shields.io/npm/v/@raminjafary/workerman/latest)](https://www.npmjs.com/package/@raminjafary/workerman)
 > Run your JavaScript off the browser's main thread with inline workers
 
 
